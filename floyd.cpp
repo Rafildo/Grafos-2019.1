@@ -63,7 +63,7 @@ int main()
 	printf("Insert the amount of vertices 'n' and edges 'm'(separated by space):\n");
 	scanf("%lld %lld", &n, &m);
 	adj_list.resize(n+5);
-	//init dist
+	//	INIT DIST MATRIX
 	for(i = 0; i <= n; i++){
 		for (j = 0; j <= n; ++j)
 		{
@@ -77,7 +77,7 @@ int main()
 		adj_list[o].push_back( make_pair(d, h) );
 	}
 	floyd_warshall();
-	//RESPOSTA//
+	//	ANSWER	//
 	print_answer();
 
 	

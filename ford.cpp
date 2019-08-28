@@ -41,8 +41,7 @@ bool bfs(lli s, lli t, lli pai[]){
 				}
 			}
 	}
-
-	//RETORNA SE CHEGAMOS NO SUMIDOURO
+	// RETURNS IF WE COULD REACH THE TARGET
 	return (visitados[t] == true);
 }
 
@@ -52,12 +51,12 @@ lli ford_fulkerson(lli s, lli t){
 
 	while(bfs(s, t, pai)){
 		lli path_flow = INF;
-		//search the smallest capacity
+		//	SEARCH THE SMALLEST CAPACITY
 		for(v=t;v!=s;v=pai[v]){
 			u=pai[v];
 			path_flow = min (path_flow, rGraph[u][v]);
 		}
-		//decrement this capacity from de capacity; it represents the flow
+		//	ADD THE FLOW
 		for(v=t;v!=s;v=pai[v]){
 			u=pai[v];
 			rGraph[u][v] -= path_flow;
@@ -93,6 +92,7 @@ int main()
         printf("Invalid source/target!\n");
         return 0;
     }
+	//	ANSWER	//
 	printf("Maximum Flow: %lld\n", ford_fulkerson(s,t));
 	
 	return 0;

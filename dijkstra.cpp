@@ -47,7 +47,6 @@ void print_answer(lli s, lli t){
 
 void dijkstra(lli s){
     lli i, i_w;
-    //ESSA FILA COLOCA OS MENORES PESOS NA FRENTE
     priority_queue<ii,vii,greater<ii>> queue;
 
     dist[s] = 0;
@@ -103,6 +102,7 @@ int main()
         visitados[i] = false;
     }
     dijkstra(s);
+    //  ANSWER  //
     print_answer(s, t);
     
     return 0;

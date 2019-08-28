@@ -58,7 +58,7 @@ void prim(lli s){
 			visited[v_top] = true;
 			for(j = 0; j < adj_list[v_top].size(); j++){
 			aux_2 = adj_list[v_top][j];
-			if(!visited[aux_2.first] && cost[aux_2.first] > aux_2.second){//cost[z] > w(v,z)
+			if(!visited[aux_2.first] && cost[aux_2.first] > aux_2.second){
 				cost[aux_2.first] = aux_2.second;
 				queue.push( {cost[aux_2.first], aux_2.first} );
 				previous[aux_2.first] = v_top;
@@ -85,7 +85,7 @@ int main()
 		adj_list[d].push_back( make_pair(o, h) );
 	}
 	prim(0);
-	//RESPOSTA//
+	//	ANSWER	//
 	print_answer(0);
 
 	
