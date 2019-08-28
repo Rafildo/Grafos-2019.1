@@ -1,30 +1,14 @@
-#include <stdio.h>
-#include <utility> 
-#include <vector>  
-#include <queue> 
-#include <limits>
-#include <cstdlib>
-#include <ctime> 
-#include<string>
-#include<iostream>
-#include<tuple>
-#include <cstring>
+#include <bits/stdc++.h>
 
 using namespace std; 
 
-#define MAX_V 7000
-#define MAX_E 1000000
+#define MAX_V 10000
 #define N_EXISTE -1
-#define E_P 0
-#define T_P 1
-#define INF std::numeric_limits<long long int>::max()
-#define TRviii(c, it) \
-    for (viii::iterator it = (c).begin(); it != (c).end(); ++it)
+#define INF numeric_limits<long long int>::max()
 
 typedef long long int lli;
 typedef pair<long long int,long long int> ii;
 typedef vector<ii> vii;
-typedef vector<int> vi;
 bool visitados[MAX_V] = {false};
 lli pai[MAX_V];
 
@@ -90,11 +74,11 @@ int main()
 {
 	lli i,j,vert_aux, count;
 	lli u,v,c,d;
-    printf("Insert the amount of vertices and edges (separated by space):\n");
+    printf("Insert the amount of vertices 'n' and edges 'm' (separated by space):\n");
 	scanf("%lld %lld", &n_vertices, &n_arestas);
 	adj_list.resize(n_vertices+5);
 	memset(rGraph, 0, sizeof(rGraph));
-	printf("Insert the m edges with 'source destination capacity' in that order (separated by space):\n");
+	printf("Insert the m edges with 'source destination capacity' in that order (separated by space):\n\tOBS: 0 <= vertex < n\n");
 	for(i=0;i<n_arestas;i++){
 		scanf("%lld %lld %lld", &u, &v, &c);
 		adj_list[u].push_back( make_pair(v, c) );

@@ -1,18 +1,10 @@
-//COM ADJ_LIST
-#include <stdio.h>
-#include <utility> 
-#include <vector>  
-#include <queue> 
-#include <cstring>
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std; 
 
 #define MAX 10000
-#define INF 99999
+#define INF numeric_limits<long long int>::max()
 #define N_EXISTE -1
-#define TRvii(c, it) \
-    for (vii::iterator it = (c).begin(); it != (c).end(); ++it)
 
 
 typedef long long int lli;
@@ -85,13 +77,14 @@ void dijkstra(lli s){
 
 int main()
 {
+    printf("OBS: INPUT AS 'u v w' ALSO MEANS 'v u w'!\n");
     lli i,j;
     lli aux_ori,aux_dest,aux_peso, s, t;
-    printf("Insert the amount of vertices and edges (separated by space):\n");
+    printf("Insert the amount of vertices 'n' and edges 'm' (separated by space):\n");
     scanf("%lld %lld", &v, &e); 
     adj_list.resize(v+5);
 
-    printf("Insert the m edges with 'source destination distance' in that order (separated by space):\n");
+    printf("Insert the m edges with 'source destination distance' in that order (separated by space):\n\tOBS: 0 <= vertex < n\n");
     for(i = 0; i < e; i++){
         scanf("%lld %lld %lld", &aux_ori, &aux_dest, &aux_peso);
         adj_list[aux_ori].push_back( make_pair(aux_dest, aux_peso) );

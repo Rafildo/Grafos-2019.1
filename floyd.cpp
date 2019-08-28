@@ -1,15 +1,10 @@
-#include <stdio.h>
-#include <utility> 
-#include <vector>  
-#include <queue> 
-#include <cstring>
-#include <limits>
+#include <bits/stdc++.h>
 
 using namespace std; 
 
 #define MAX 1000
 #define N_EXISTE -1
-#define INF std::numeric_limits<int>::max()
+#define INF numeric_limits<int>::max()
 
 typedef long long int lli;
 typedef pair<long long int, long long int> ii;
@@ -65,7 +60,7 @@ int main()
 {
 	lli k, o, d, h;
 	int i,j;
-	printf("Insert the amount of vertices and edges (separated by space):\n");
+	printf("Insert the amount of vertices 'n' and edges 'm'(separated by space):\n");
 	scanf("%lld %lld", &n, &m);
 	adj_list.resize(n+5);
 	//init dist
@@ -75,7 +70,7 @@ int main()
 			dist[i][j] = INF;
 		}
 	}
-	printf("Insert the m edges with 'source destination distance' in that order (separated by space):\n");
+	printf("Insert the m edges with 'source destination distance' in that order (separated by space):\n\tOBS: 0 <= vertex < n\n");
 	for (i = 0; i < m; ++i)
 	{
 		scanf("%lld %lld %lld", &o, &d, &h);
